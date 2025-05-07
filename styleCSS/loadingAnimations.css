@@ -1,0 +1,65 @@
+:root{
+    --primary-color: #8797AF;
+    --secondary-color: #56667A;
+    --tertiary-color: #E4FFE1;
+    --complementary-color-light: #FF6F59;
+    --complementary-color-dark: #B53B36;
+}
+
+/* DOTS - LOADING ANIMATIONS */
+
+@keyframes loadingAnimDot {
+    100% { transform: scale(1.6); }
+}
+
+.loadAnimDotContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+    .loadAnimDotContainer > *{
+        width: 10px;
+        height: 10px;
+        margin: 0 8px;
+
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+    .loadAnimDotContainer > *:nth-child(1){
+        animation: loadingAnimDot 0.6s ease-in-out infinite alternate;
+    }
+    .loadAnimDotContainer > *:nth-child(2){
+        animation: loadingAnimDot 0.6s ease-in-out infinite alternate 0.2s;
+    }
+    .loadAnimDotContainer > *:nth-child(3){
+        animation: loadingAnimDot 0.6s ease-in-out infinite alternate 0.4s;
+    }
+
+/* DOTS - LOADING ANIMATIONS */
+
+@keyframes loadingAnimCircle {
+
+    100% { transform: rotate(360deg); }
+}
+
+.loadAnimCircleContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.loadAnimCircleContainer > *{
+    width: 22px;
+    height: 22px;
+    margin: 0 8px;
+
+    border-radius: 50%;
+    border: 5px dotted var(--primary-color);
+    background-color: transparent;
+
+
+    animation: loadingAnimCircle 3s linear infinite;
+}

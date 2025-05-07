@@ -1,0 +1,120 @@
+:root{
+    --primary-color: #8797AF;
+    --secondary-color: #56667A;
+    --tertiary-color: #E4FFE1;
+    --complementary-color-light: #FF6F59;
+    --complementary-color-dark: #B53B36;
+}
+
+body{
+    background: var(--primary-color);
+
+    display: flex;
+    flex-direction: column;
+}
+    .mainTitle{
+        align-self: center;
+        margin: 20px;
+
+        color: var(--tertiary-color);
+
+        font-family: 'Roboto', Courier, monospace;
+        font-weight: bolder;
+        font-size: 30px;
+
+        letter-spacing: 3px;
+    }
+    .displayBlock{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        height: 200px;
+        width: 95vw;
+        background: var(--secondary-color);
+
+        border-color: var(--tertiary-color);
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 7px;
+    }
+        .blockTitle{
+            padding-left: 20px;
+            color: var(--tertiary-color);
+
+            font-family: 'Roboto', Courier, monospace;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+        .blockSeparator{
+            width: calc(100% - 40px);
+            margin: 0 20px;
+            margin-bottom: 20px;
+            height: 1px;
+
+            background: var(--tertiary-color);
+        }
+        .blockAnimsContainer{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+            height: 100%;
+            border-radius: 10px;
+        }
+            .animationBlock{
+                display: flex;
+                flex-direction: column;
+
+                min-width: 200px;
+                height: 100px;
+
+                /*border-radius: 10px;*/
+                /*border-color: var(--primary-color);*/
+                /*border-style: solid;*/
+            }
+                .animBlockTitle{
+                    margin: 0px;
+                    color: var(--primary-color);
+
+                    letter-spacing: 2px;
+                    word-spacing: 3px;
+
+                    font-family: monospace;
+                    text-align: center;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
