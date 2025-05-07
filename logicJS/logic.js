@@ -1,5 +1,5 @@
-const dotsSize = 5;
-const borderDotSize = 2;
+let dotsSize = 5;
+let borderDotSize = dotsSize / 2.5;
 let positions = [];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -9,13 +9,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     updateAnimBlocks();
 
-    update();
+    //update();
 });
 
 document.addEventListener('click', updateAnimBlocks);
 window.addEventListener('resize', updateAnimBlocks);
 
 function updateAnimBlocks(){
+
+    const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+    const blockHeight = 200, mainFontSize = 30, baseAnimElementSize = 5, dotsBaseSize = 5;
+    const mobileSizeMultiplier = 1.5;
+
+    if (deviceType == 'Mobile'){
+        document.documentElement.style.setProperty('--blockHeight', `${blockHeight * mobileSizeMultiplier}px`)
+        document.documentElement.style.setProperty('--mainFontSize', `${mainFontSize * mobileSizeMultiplier}px`);
+        document.documentElement.style.setProperty('--baseAnimElementSize', `${baseAnimElementSize * mobileSizeMultiplier}px`);
+        dotsSize = dotsBaseSize * mobileSizeMultiplier;
+    }
+    else{
+        document.documentElement.style.setProperty('--blockHeight', `${blockHeight}px`);
+        document.documentElement.style.setProperty('--mainFontSize', `${mainFontSize}px`);
+        document.documentElement.style.setProperty('--baseAnimElementSize', `${baseAnimElementSize}px`);
+        dotsSize = dotsBaseSize;
+    }
 
     // Eliminar los contadores existentes
     let existingSteps = document.querySelectorAll('.stepsElements');

@@ -1,9 +1,8 @@
 :root{
-    --primary-color: #8797AF;
-    --secondary-color: #56667A;
-    --tertiary-color: #E4FFE1;
-    --complementary-color-light: #FF6F59;
-    --complementary-color-dark: #B53B36;
+    --baseAnimElementSize: 5px;
+
+    --dotSize: calc(var(--baseAnimElementSize) * 2);
+    --circleSize: calc(calc(var(--baseAnimElementSize) * 4) + 2px);
 }
 
 /* DOTS - LOADING ANIMATIONS */
@@ -20,8 +19,8 @@
     height: 100%;
 }
     .loadAnimDotContainer > *{
-        width: 10px;
-        height: 10px;
+        width: var(--baseAnimElementSize);
+        height: var(--baseAnimElementSize);
         margin: 0 8px;
 
         border-radius: 50%;
@@ -52,12 +51,12 @@
     height: 100%;
 }
 .loadAnimCircleContainer > *{
-    width: 22px;
-    height: 22px;
+    width: var(--circleSize);
+    height: var(--circleSize);
     margin: 0 8px;
 
     border-radius: 50%;
-    border: 5px dotted var(--primary-color);
+    border: var(--baseAnimElementSize) dotted var(--primary-color);
     background-color: transparent;
 
 
