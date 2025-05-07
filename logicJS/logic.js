@@ -9,13 +9,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     updateAnimBlocks();
 
-    update();
+    //update();
 });
 
 document.addEventListener('click', updateAnimBlocks);
 window.addEventListener('resize', updateAnimBlocks);
 
 function updateAnimBlocks(){
+
+    const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+    if (deviceType == 'Mobile'){
+        let displayBlocks = document.querySelectorAll('.displayBlock');
+        displayBlocks.forEach(displayBlock => {
+            displayBlock.style.height = '500px';
+        });
+        let blockTitles = document.querySelectorAll('.blockTitle');
+        blockTitles.forEach(blockTitle => {
+           blockTitle.style.fontSize = '50px';
+        });
+
+    }
 
     // Eliminar los contadores existentes
     let existingSteps = document.querySelectorAll('.stepsElements');
