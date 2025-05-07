@@ -4,6 +4,14 @@
     --tertiary-color: #E4FFE1;
     --complementary-color-light: #FF6F59;
     --complementary-color-dark: #B53B36;
+
+    --blockHeight: 200px;
+    --animPanelSize:  var(--blockHeight);
+
+    --mainFontSize: 30px;
+    --blockFontSize: calc(var(--mainFontSize) - 10px);
+    --animFontSize: calc(var(--blockFontSize) - 6px);
+
 }
 
 body{
@@ -20,7 +28,7 @@ body{
 
         font-family: 'Roboto', Courier, monospace;
         font-weight: bolder;
-        font-size: 30px;
+        font-size: var(--mainFontSize);
 
         letter-spacing: 3px;
     }
@@ -29,7 +37,7 @@ body{
         flex-direction: column;
         align-self: center;
 
-        height: 200px;
+        height: var(--blockHeight);
         width: 95vw;
         background: var(--secondary-color);
 
@@ -44,12 +52,11 @@ body{
 
             font-family: 'Roboto', Courier, monospace;
             font-weight: lighter;
-            font-size: 20px;
+            font-size: var(--blockFontSize);
         }
         .blockSeparator{
             width: calc(100% - 40px);
-            margin: 0 20px;
-            margin-bottom: 20px;
+            margin: 0 20px 20px;
             height: 1px;
 
             background: var(--tertiary-color);
@@ -70,15 +77,15 @@ body{
                 display: flex;
                 flex-direction: column;
 
-                min-width: 200px;
-                height: 100px;
+                min-width: var(--animPanelSize);
+                height: calc(var(--animPanelSize) / 2);
 
                 /*border-radius: 10px;*/
                 /*border-color: var(--primary-color);*/
                 /*border-style: solid;*/
             }
                 .animBlockTitle{
-                    margin: 0px;
+                    margin: 0;
                     color: var(--primary-color);
 
                     letter-spacing: 2px;
@@ -87,7 +94,7 @@ body{
                     font-family: monospace;
                     text-align: center;
                     font-weight: normal;
-                    font-size: 14px;
+                    font-size: var(--animFontSize);
                 }
 
 
