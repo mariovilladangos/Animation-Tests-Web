@@ -19,7 +19,7 @@ function updateAnimBlocks(){
 
     const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
     const blockHeight = 200, mainFontSize = 30, baseAnimElementSize = 5, dotsBaseSize = 5;
-    const mobileSizeMultiplier = 1.5;
+    const mobileSizeMultiplier = 1.2;
 
     if (deviceType == 'Mobile'){
         document.documentElement.style.setProperty('--blockHeight', `${blockHeight * mobileSizeMultiplier}px`)
