@@ -6,7 +6,7 @@ improve my skills on html, css and javascript.
 ## Tryout the website
 [Animation Tests Web](https://mariovilladangos.github.io/Animation-Tests-Web/)
 
-> ⚠️ Disclaimer:
+> ⚠️ **Disclaimer**:
 >
 > The website is not finished and probably won't ever be,
 > since there's always space for improvement and more
