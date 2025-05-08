@@ -4,6 +4,7 @@
     --dotsSequenceSize: calc(var(--baseAnimElementSize) * 1.5);
     --circleSize: calc(calc(var(--baseAnimElementSize) * 4) + 2px);
     --dotSpinSize: calc(var(--baseAnimElementSize) * 2);
+    --dotsWinLikeSize: var(--dotsSequenceSize);
 }
 
 /* DOTS */
@@ -77,14 +78,69 @@
     justify-content: center;
     height: 100%;
 }
-.loadAnimDotSpinContainer > * {
-    width: var(--dotSpinSize);
-    height: var(--dotSpinSize);
-    margin: 0 8px;
+    .loadAnimDotSpinContainer > * {
+        width: var(--dotSpinSize);
+        height: var(--dotSpinSize);
+        margin: 0 8px;
 
-    border-radius: 50%;
-    background-color: var(--primary-color);
+        border-radius: 50%;
+        background-color: var(--primary-color);
 
-    transform: scale(1, 2);
-    animation: loadingAnimDotStretch1 5s linear infinite;
+        transform: scale(1, 2);
+        animation: loadingAnimDotStretch1 5s linear infinite;
+    }
+
+/* WINDOWS LIKE */
+
+@keyframes loadingAnimWinLike{
+    0% { transform: rotate(var(--initialPos)); }
+    /*1% { transform: rotate(var(--initialPos)); }*/
+    100% { transform: rotate(calc(var(--initialPos) + 360deg)); }
 }
+
+.loadWinLikeContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+    .loadWinLikeContainer > * {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+    .loadWinLikeContainer > *:nth-child(1) {
+        --initialPos: 25deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite running;
+    }
+    .loadWinLikeContainer > *:nth-child(2) {
+        --initialPos: 15deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite 100ms running;
+    }
+    .loadWinLikeContainer > *:nth-child(3) {
+        --initialPos: 5deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite 200ms running;
+    }
+    .loadWinLikeContainer > *:nth-child(4) {
+        --initialPos: -5deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite 300ms running;
+    }
+    .loadWinLikeContainer > *:nth-child(5) {
+        --initialPos: -15deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite 400ms running;
+    }
+    .loadWinLikeContainer > *:nth-child(6) {
+        --initialPos: -20deg;
+        animation: loadingAnimWinLike ease-in-out 2s infinite 500ms running;
+    }
+        .loadWinLikeContainer > * > * {
+            position: relative;
+            bottom: 20px;
+            width: var(--dotsWinLikeSize);
+            height: var(--dotsWinLikeSize);
+            border-radius: 100%;
+            background-color: var(--primary-color);
+        }
