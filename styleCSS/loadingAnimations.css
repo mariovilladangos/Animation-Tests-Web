@@ -1,64 +1,90 @@
 :root{
     --baseAnimElementSize: 5px;
 
-    --dotSize: calc(var(--baseAnimElementSize) * 2);
+    --dotsSequenceSize: calc(var(--baseAnimElementSize) * 1.5);
     --circleSize: calc(calc(var(--baseAnimElementSize) * 4) + 2px);
+    --dotSpinSize: calc(var(--baseAnimElementSize) * 2);
 }
 
-/* DOTS - LOADING ANIMATIONS */
+/* DOTS */
 
-@keyframes loadingAnimDot {
+@keyframes loadingAnimDotsSequence {
     100% { transform: scale(1.6); }
 }
 
-.loadAnimDotContainer{
+.loadAnimDotsSequenceContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
-    .loadAnimDotContainer > *{
-        width: var(--baseAnimElementSize);
-        height: var(--baseAnimElementSize);
+    .loadAnimDotsSequenceContainer > * {
+        width: var(--dotsSequenceSize);
+        height: var(--dotsSequenceSize);
         margin: 0 8px;
 
         border-radius: 50%;
         background-color: var(--primary-color);
     }
-    .loadAnimDotContainer > *:nth-child(1){
-        animation: loadingAnimDot 0.6s ease-in-out infinite alternate;
+    .loadAnimDotsSequenceContainer > *:nth-child(1){
+        animation: loadingAnimDotsSequence 0.6s ease-in-out infinite alternate;
     }
-    .loadAnimDotContainer > *:nth-child(2){
-        animation: loadingAnimDot 0.6s ease-in-out infinite alternate 0.2s;
+    .loadAnimDotsSequenceContainer > *:nth-child(2){
+        animation: loadingAnimDotsSequence 0.6s ease-in-out infinite alternate 0.2s;
     }
-    .loadAnimDotContainer > *:nth-child(3){
-        animation: loadingAnimDot 0.6s ease-in-out infinite alternate 0.4s;
+    .loadAnimDotsSequenceContainer > *:nth-child(3){
+        animation: loadingAnimDotsSequence 0.6s ease-in-out infinite alternate 0.4s;
     }
 
-/* DOTS - LOADING ANIMATIONS */
+
+/* CIRCLE */
 
 @keyframes loadingAnimCircle {
 
     100% { transform: rotate(360deg); }
 }
 
-.loadAnimCircleContainer{
+.loadAnimCircleContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
-.loadAnimCircleContainer > *{
-    width: var(--circleSize);
-    height: var(--circleSize);
+    .loadAnimCircleContainer > * {
+        width: var(--circleSize);
+        height: var(--circleSize);
+        margin: 0 8px;
+
+        border-radius: 50%;
+        border: var(--baseAnimElementSize) dotted var(--primary-color);
+        background-color: transparent;
+
+        animation: loadingAnimCircle 3s linear infinite;
+    }
+
+/* DOT SPIN */
+
+@keyframes loadingAnimDotStretch1 {
+    100% { rotate: 3600deg }
+}
+
+.loadAnimDotSpinContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.loadAnimDotSpinContainer > * {
+    width: var(--dotSpinSize);
+    height: var(--dotSpinSize);
     margin: 0 8px;
 
     border-radius: 50%;
-    border: var(--baseAnimElementSize) dotted var(--primary-color);
-    background-color: transparent;
+    background-color: var(--primary-color);
 
-
-    animation: loadingAnimCircle 3s linear infinite;
+    transform: scale(1, 2);
+    animation: loadingAnimDotStretch1 5s linear infinite;
 }
